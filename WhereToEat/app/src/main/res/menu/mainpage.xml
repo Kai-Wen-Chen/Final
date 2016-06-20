@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/main_page"
+        android:title="@string/main_page" />
+    <item android:id="@+id/draw_lots1"
+        android:title="@string/draw_lots1" />
+    <item android:id="@+id/draw_lots2"
+        android:title="@string/draw_lots2" />
+</menu>
