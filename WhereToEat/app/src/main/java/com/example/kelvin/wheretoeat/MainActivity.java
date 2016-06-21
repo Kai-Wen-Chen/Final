@@ -1,19 +1,52 @@
 package com.example.kelvin.wheretoeat;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+    private Integer firstTime=0;
+    //----------------Opening Image-------------------//
+    private static final int STOPSPLASH = 0;
+    //time in milliseconds
+    private static long SPLASHTIME = 2000;
+    private ImageView splash;
+    private Handler splashHandler = new Handler() {
+        /* (non-Javadoc)
+         * @see android.os.Handler#handleMessage(android.os.Message)
+         */
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case STOPSPLASH:
+                    //remove SplashScreen from view
+                    splash.setVisibility(View.GONE);
+                    break;
+            }
+            super.handleMessage(msg);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(firstTime==0){
+            splash = (ImageView) findViewById(R.id.splashscreen);
+            Message msg = new Message();
+            msg.what = STOPSPLASH;
+            splashHandler.sendMessageDelayed(msg, SPLASHTIME);
+            firstTime=1;
+            SPLASHTIME=0;
+        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
