@@ -3,4 +3,10 @@
     <string name="main_page">主頁</string>
     <string name="draw_lots1">抽籤1</string>
     <string name="draw_lots2">抽籤2</string>
+    <string name="enter_restaurant">請輸入餐廳</string>
+    <string name="enter">輸入</string>
+    <string name="enter_people">請輸入人數</string>
+    <string name="random">抽籤</string>
+    <string name="refresh">重置</string>
+    <string name="restaurant_name">餐廳名稱</string>
 </resources>
