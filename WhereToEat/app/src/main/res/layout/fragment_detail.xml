@@ -52,6 +52,13 @@
         android:layout_marginBottom="47dp">
     </android.support.v7.widget.RecyclerView>
 
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:id="@+id/shop_image"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
     <!--TextView
         android:text="香烤戰斧豬排360"
         android:textSize="24sp"

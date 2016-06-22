@@ -32,7 +32,7 @@ public class DrawLots1Activity extends AppCompatActivity {
     boolean isBtnClick = false;
     public void getRandomRestaurant(View v){
         int rand,total;
-        total = 6;
+        total = 10;
         Random run = new Random();
         rand=run.nextInt(total);
         Shop result = ShopList.shopList[rand];

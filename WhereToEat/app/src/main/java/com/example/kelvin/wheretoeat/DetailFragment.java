@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -155,6 +156,22 @@ public class DetailFragment extends Fragment {
             "RENDANG(飯/麵/雞肉/牛肉)-----80"
     };
 
+    private String[] dish_LiGing = new String[]{
+
+    };
+
+    private String[] dish_GuoBaoBao = new String[]{
+
+    };
+
+    private String[] dish_Mony = new String[]{
+
+    };
+
+    private String[] dish_no = new String[]{
+
+    };
+
     public DetailFragment() {
         // Required empty public constructor
     }
@@ -186,6 +203,8 @@ public class DetailFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_dish);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        ImageView shop_image = (ImageView) view.findViewById(R.id.shop_image);
+
         /*if (position == 0) {
             MyAdapter myAdapter = new MyAdapter(dish_IDoSakura);
 
@@ -197,48 +216,74 @@ public class DetailFragment extends Fragment {
 
         switch(position){
             case 0:
+                shop_image.setImageResource(R.drawable.idosakura);
                 myAdapter = new MyAdapter(dish_IDoSakura);
 
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 1:
+                shop_image.setImageResource(R.drawable.mcdonald);
                 myAdapter = new MyAdapter(dish_McDonald);
 
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 2:
+                shop_image.setImageResource(R.drawable.ganchuang);
                 myAdapter = new MyAdapter(dish_GanChuang);
 
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 3:
+                shop_image.setImageResource(R.drawable.ohohyes);
                 myAdapter = new MyAdapter(dish_OhOhYes);
 
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 4:
+                shop_image.setImageResource(R.drawable.mrraindeer);
                 myAdapter = new MyAdapter(dish_MrRaindeer);
 
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 5:
+                shop_image.setImageResource(R.drawable.malaysia);
                 myAdapter = new MyAdapter(dish_Malaysia);
 
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 6:
+                //shop_image.setImageResource(R.drawable.malaysia);
+                myAdapter = new MyAdapter(dish_LiGing);
+
+                recyclerView.setAdapter(myAdapter);
+                recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 7:
+                //shop_image.setImageResource(R.drawable.malaysia);
+                myAdapter = new MyAdapter(dish_GuoBaoBao);
+
+                recyclerView.setAdapter(myAdapter);
+                recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 8:
+                //shop_image.setImageResource(R.drawable.malaysia);
+                myAdapter = new MyAdapter(dish_Mony);
+
+                recyclerView.setAdapter(myAdapter);
+                recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 9:
+                //shop_image.setImageResource(R.drawable.malaysia);
+                myAdapter = new MyAdapter(dish_no);
+
+                recyclerView.setAdapter(myAdapter);
+                recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             default:
                 break;
