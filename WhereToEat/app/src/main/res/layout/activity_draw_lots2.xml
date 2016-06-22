@@ -3,23 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#B2E2FF"
     tools:context="com.example.kelvin.wheretoeat.DrawLots2Activity">
-
+    <include layout="@layout/toolbar"
+        android:id="@+id/draw_lots2_toolbar"
+        />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:textSize="20sp"
         android:hint="@string/enter_restaurant"
-        android:layout_alignBottom="@+id/button"
+        android:layout_below="@+id/draw_lots2_toolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/button"
         android:layout_toStartOf="@+id/button" />
 
@@ -29,9 +25,10 @@
         android:text="@string/enter"
         android:id="@+id/button"
         android:onClick="myFancyMethod"
-        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_alignBottom="@+id/editText" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -40,7 +37,7 @@
         android:inputType="number"
         android:textSize="20sp"
         android:hint="@string/enter_people"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/button"
@@ -52,9 +49,11 @@
         android:text="@string/enter"
         android:id="@+id/button2"
         android:onClick="myFancyMethod2"
-        android:layout_below="@+id/button"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
 
     <Button
         android:layout_width="wrap_content"
@@ -75,10 +74,10 @@
         android:onClick="myFancyMethod4"
         android:id="@+id/button4"
         android:layout_below="@+id/button3"
-        android:layout_alignRight="@+id/button3"
-        android:layout_alignEnd="@+id/button3"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_alignEnd="@+id/textView4" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -111,10 +110,11 @@
         android:text="0"
         android:textSize="30sp"
         android:id="@+id/textView4"
-        android:layout_below="@+id/button4"
+        android:gravity="center"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/textView2"
-        android:layout_alignRight="@+id/button4"
-        android:layout_alignEnd="@+id/button4"
-        android:gravity="center" />
+        android:layout_toEndOf="@+id/textView2" />
 
 </RelativeLayout>

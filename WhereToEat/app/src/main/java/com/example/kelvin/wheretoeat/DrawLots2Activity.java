@@ -3,6 +3,7 @@ package com.example.kelvin.wheretoeat;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,6 +32,10 @@ public class DrawLots2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_draw_lots2);
+        Toolbar my_toolbar = (Toolbar) findViewById(R.id.draw_lots2_toolbar);
+        setSupportActionBar(my_toolbar);
+        getSupportActionBar().setTitle(R.string.my_tb_title);
+        getSupportActionBar().setIcon(R.drawable.ic_action_name);
         restaurant=(EditText) findViewById(R.id.editText);
         number=(EditText) findViewById(R.id.editText2);
         text = (TextView) findViewById(R.id.textView2);
@@ -46,12 +51,17 @@ public class DrawLots2Activity extends AppCompatActivity {
     public void myFancyMethod(View v){
         //---------------Get User input---------------------//
         if(restaurant.getText().length()!=0) {
-            if (times > 0)
+            if (times > 0 && times<5)
                 input = input + "\n" + restaurant.getText().toString();
-            else
+            else if(times==0)
                 input = restaurant.getText().toString();
             times++;
+            if(times>=5)
+            {
+                times=5;
+            }
             text.setText(input);
+            result.setText("最多5家");
         }
     }
     List<Integer> list = new ArrayList();
@@ -63,13 +73,19 @@ public class DrawLots2Activity extends AppCompatActivity {
         if(number.getText().length()!=0) {
             num = Integer.parseInt(number.getText().toString());
             Toast.makeText(this, "add " + num.toString() + " successfully", Toast.LENGTH_SHORT).show();
-            list.add(num);
-            if(btn2Times>0)
+            if(btn2Times>0&&btn2Times<5)
                 numInput = numInput + "\n" + number.getText().toString();
-            else
+            else if(btn2Times==0)
                 numInput = number.getText().toString();
+            if(btn2Times>=5)
+            {
+                btn2Times=5;
+            }else{
+                list.add(num);
+            }
             btn2Times++;
             Pnum.setText(numInput);
+            result.setText("最多5家");
         }
     }
     public void myFancyMethod3(View v){

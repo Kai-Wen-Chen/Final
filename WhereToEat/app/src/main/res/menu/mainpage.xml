@@ -1,8 +1,14 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/main_page"
         android:title="@string/main_page" />
     <item android:id="@+id/draw_lots1"
         android:title="@string/draw_lots1" />
     <item android:id="@+id/draw_lots2"
         android:title="@string/draw_lots2" />
+    <item android:id="@+id/menu_search"
+        android:title="@string/menu_search"
+        android:icon="@drawable/ic_action_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
 </menu>

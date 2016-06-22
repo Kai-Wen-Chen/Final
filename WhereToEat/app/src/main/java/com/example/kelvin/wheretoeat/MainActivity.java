@@ -1,10 +1,13 @@
 package com.example.kelvin.wheretoeat;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -38,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar my_toolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(my_toolbar);
+        getSupportActionBar().setTitle(R.string.my_tb_title);
+        getSupportActionBar().setIcon(R.drawable.ic_action_name);
 
         if(firstTime==0){
             splash = (ImageView) findViewById(R.id.splashscreen);
@@ -52,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.mainpage, menu);
+        SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         return true;
     }
 
