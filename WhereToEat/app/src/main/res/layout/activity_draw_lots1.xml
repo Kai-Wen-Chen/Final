@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B2FFC7"
     tools:context="com.example.kelvin.wheretoeat.DrawLots1Activity">
 
     <include layout="@layout/toolbar"
