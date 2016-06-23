@@ -18,8 +18,6 @@ public class MyAdapter extends RecyclerView.Adapter{
         this.list_dish = list_dish;
     }
 
-
-
     @Override
     public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLayoutView = LayoutInflater.from(parent.getContext())

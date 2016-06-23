@@ -27,6 +27,8 @@ public class MainFragment extends ListFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
+
+        //載入店家名單
         ArrayList<String> shopNames = new ArrayList<>();
         for (Shop shop : ShopList.shopList){
             shopNames.add(shop.getName());
@@ -40,6 +42,7 @@ public class MainFragment extends ListFragment {
         }
     }
 
+    //記錄目前選到的店家
     @Override
     public void onSaveInstanceState(Bundle outState){
         super.onSaveInstanceState(outState);
@@ -51,6 +54,7 @@ public class MainFragment extends ListFragment {
         showDetail(position);
     }
 
+    //建立詳細資料
     void showDetail(int position){
         this.position = position;
         Intent intent = new Intent();

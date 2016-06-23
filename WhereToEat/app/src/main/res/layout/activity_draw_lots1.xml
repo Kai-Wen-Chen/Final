@@ -10,8 +10,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Random!!!"
+        android:text="今天就吃這家吧"
         android:textSize="30dp"
+        android:background="@drawable/custom_button"
         android:onClick="getRandomRestaurant"
         android:id="@+id/button5"
         android:layout_marginTop="60dp"

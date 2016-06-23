@@ -37,15 +37,19 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    //建立主頁面，對應到activity_main->MainFragment.xml
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //建立工具列
         Toolbar my_toolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(my_toolbar);
         getSupportActionBar().setTitle(R.string.my_tb_title);
         getSupportActionBar().setIcon(R.drawable.ic_action_name);
 
+        //執行開頭動畫
         if(firstTime==0){
             splash = (ImageView) findViewById(R.id.splashscreen);
             Message msg = new Message();
@@ -56,15 +60,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //建立選單
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.mainpage, menu);
+
+        //建立搜尋列
         SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
         SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         return true;
     }
 
+    //選擇選單選項
     public boolean onOptionsItemSelected(MenuItem item) {
         int item_id = item.getItemId();
 
@@ -79,10 +87,5 @@ public class MainActivity extends AppCompatActivity {
             default: return false;
         }
         return true;
-    }
-
-    public void onItemSelected(View v){
-        if (v.getId() == R.id.main_page)
-            startActivity(new Intent(this, DetailActivity.class));
     }
 }

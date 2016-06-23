@@ -149,15 +149,117 @@ public class SearchResultsActivity extends AppCompatActivity {
             "福建炒麵－－－－－－－－－65",
             "RENDANG(飯/麵/雞肉/牛肉)－80"
     };
+    private String[] dish_LiGing = new String[]{
+            "主廚特餐－－－－－－－－－65",
+            "豚丼－－－－－－－－－－－80",
+            "雞排丼－－－－－－－－－－85",
+            "牛丼－－－－－－－－－－－90",
+            "黃金豬排丼－－－－－－－－95",
+            "起司豬排丼－－－－－－－－95",
+            "韓式泡菜豬肉丼－－－－－－80",
+            "韓式泡菜牛肉丼－－－－－－90",
+            "咖哩丼－－－－－－－－－－50",
+            "咖哩豬肉丼－－－－－－－－80",
+            "咖哩雞肉丼－－－－－－－－80",
+            "川辣豬肉丼－－－－－－－－70",
+            "川辣雞排丼－－－－－－－－70",
+            "川辣牛肉丼－－－－－－－－80",
+            "川辣豬排丼－－－－－－－－80",
+            "川辣雞腿丼－－－－－－－－85",
+            "上湯拉麵－－－－－－－－－60",
+            "海苔拉麵－－－－－－－－－65",
+            "韓式泡菜拉麵－－－－－－－75",
+            "招牌叉燒拉麵－－－－－－－80",
+            "雞排拉麵－－－－－－－－－85",
+            "可樂餅拉麵－－－－－－－－90",
+            "黃金豬排拉麵－－－－－－－95",
+            "起司豬排拉麵－－－－－－－95"
+    };
+
+    private String[] dish_GuoBaoBao = new String[]{
+            "家傳焢肉刈包－－－－－－－45",
+            "京醬焢肉刈包－－－－－－－45",
+            "招牌嫩骨刈包－－－－－－－45",
+            "家傳豬腳飯－－－－－－－－60",
+            "香煎雞腿肉飯－－－－－－－55",
+            "香煎排骨飯－－－－－－－－55",
+            "招牌嫩骨飯－－－－－－－－55",
+            "家傳焢肉飯－－－－－－－－55",
+            "泰式鴨香飯－－－－－－－－55",
+            "梅干肉燥飯+瓜仔鮮雞盅－－75",
+            "梅干肉燥飯+人蔘雞腿盅－－80",
+            "梅干肉燥飯+藥燉排骨盅－－75",
+            "藥燉排骨盅－－－－－－－－45",
+            "瓜仔鮮雞盅－－－－－－－－45",
+            "人蔘鮮雞盅－－－－－－－－50"
+    };
+
+    private String[] dish_Mony = new String[]{
+            "牛丼－－－－－－－－－－－80",
+            "雙倍牛丼－－－－－－－－－120",
+            "炸雞牛丼－－－－－－－－－110",
+            "炸豬排牛丼－－－－－－－－120",
+            "魚排牛丼－－－－－－－－－110",
+            "三種起司牛丼－－－－－－－100",
+            "咖哩牛丼－－－－－－－－－90",
+            "泡菜牛丼－－－－－－－－－90",
+            "炸豬排丼－－－－－－－－－80",
+            "炸雞丼－－－－－－－－－－70",
+            "魚排丼－－－－－－－－－－70",
+            "德式香腸丼－－－－－－－－70",
+            "咖哩豬排丼－－－－－－－－80",
+            "咖哩炸雞丼－－－－－－－－70",
+            "咖哩魚排丼－－－－－－－－70",
+            "德式香腸咖哩飯－－－－－－70",
+            "韓式泡菜咖哩飯－－－－－－70",
+            "四種起司肉醬飯－－－－－－90",
+            "德腸起司肉醬飯－－－－－－100",
+            "泡菜起司肉醬飯－－－－－－80",
+            "起司肉醬飯－－－－－－－－70",
+            "印度拉茶－－－－－－－－－30",
+            "蘋果紅茶－－－－－－－－－25",
+            "濃味綠茶－－－－－－－－－25"
+    };
+
+    private String[] dish_porridge = new String[]{
+            "廣東粥－－－－－－－－－－55",
+            "海鮮粥－－－－－－－－－－55",
+            "玉米瘦肉粥－－－－－－－－55",
+            "皮蛋瘦肉粥－－－－－－－－55",
+            "香菇瘦肉粥－－－－－－－－55",
+            "蔬菜瘦肉粥－－－－－－－－55",
+            "花枝瘦肉粥－－－－－－－－55",
+            "蝦仁瘦肉粥－－－－－－－－55",
+            "豬肝瘦肉粥－－－－－－－－55",
+            "吻仔魚瘦肉粥－－－－－－－55",
+            "招牌粥－－－－－－－－－－65",
+            "鮑魚粥－－－－－－－－－－65",
+            "魚片粥－－－－－－－－－－65",
+            "生滾牛肉粥－－－－－－－－65",
+            "奶油蟹肉粥－－－－－－－－75",
+            "蒜味牛肉炒麵－－－－－－－60",
+            "蒜味豬肉炒麵－－－－－－－60",
+            "沙茶牛肉炒麵－－－－－－－60",
+            "沙茶豬肉炒麵－－－－－－－60",
+            "沙茶豬肝炒麵－－－－－－－60",
+            "豬肝鍋燒麵－－－－－－－－65",
+            "牛肉鍋燒麵－－－－－－－－65",
+            "豬肉鍋燒麵－－－－－－－－65",
+            "海鮮鍋燒麵－－－－－－－－65",
+            "泡菜鍋燒麵－－－－－－－－65"
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
+
         Toolbar my_toolbar = (Toolbar) findViewById(R.id.search_results_toolbar);
         setSupportActionBar(my_toolbar);
         getSupportActionBar().setIcon(R.drawable.ic_action_search);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //搜尋
         String query = new String();
         Intent searchIntent = getIntent();
         if(Intent.ACTION_SEARCH.equals(searchIntent.getAction()))
@@ -215,6 +317,40 @@ public class SearchResultsActivity extends AppCompatActivity {
                 break;
             }
         }
+        for(i=0; i<dish_LiGing.length; i++)
+        {
+            if(dish_LiGing[i].contains(query))
+            {
+                searchResults.add("利竫和食");
+                break;
+            }
+        }
+        for(i=0; i<dish_GuoBaoBao.length; i++)
+        {
+            if(dish_GuoBaoBao[i].contains(query))
+            {
+                searchResults.add("嫩寶包");
+                break;
+            }
+        }
+        for(i=0; i<dish_Mony.length; i++)
+        {
+            if(dish_Mony[i].contains(query))
+            {
+                searchResults.add("墨尼捲餅");
+                break;
+            }
+        }
+        for(i=0; i<dish_porridge.length; i++)
+        {
+            if(dish_porridge[i].contains(query))
+            {
+                searchResults.add("珍御品廣東粥");
+                break;
+            }
+        }
+
+        //建立搜尋到的結果
         ListView listView_search = (ListView) findViewById(R.id.listView_search_result);
         ArrayAdapter adapter = new ArrayAdapter(this, R.layout.listitem, searchResults);
         listView_search.setAdapter(adapter);
@@ -242,6 +378,18 @@ public class SearchResultsActivity extends AppCompatActivity {
                     case "馬來老爹":
                         position = 5;
                         break;
+                    case "利竫和食":
+                        position = 6;
+                        break;
+                    case "嫩寶包":
+                        position = 7;
+                        break;
+                    case "墨尼捲餅":
+                        position = 8;
+                        break;
+                    case "珍御品廣東粥":
+                        position = 9;
+                        break;
                     default:
                         break;
                 }
@@ -250,6 +398,7 @@ public class SearchResultsActivity extends AppCompatActivity {
         });
     }
 
+    //建立詳細資料
     void showDetail(int position){
         this.position = position;
         Intent intent = new Intent();

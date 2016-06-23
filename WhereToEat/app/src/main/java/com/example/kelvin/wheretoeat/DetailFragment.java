@@ -24,6 +24,8 @@ import org.w3c.dom.Text;
  */
 public class DetailFragment extends Fragment {
     private int position;
+
+    /*--------------------店家資訊-------------------------*/
     private String[] dish_IDoSakura = new String[]{
             "香烤戰斧豬排－－－－－－360",
             "雙醬佐牛排－－－－－－－360",
@@ -157,20 +159,105 @@ public class DetailFragment extends Fragment {
     };
 
     private String[] dish_LiGing = new String[]{
-
+            "主廚特餐－－－－－－－－－65",
+            "豚丼－－－－－－－－－－－80",
+            "雞排丼－－－－－－－－－－85",
+            "牛丼－－－－－－－－－－－90",
+            "黃金豬排丼－－－－－－－－95",
+            "起司豬排丼－－－－－－－－95",
+            "韓式泡菜豬肉丼－－－－－－80",
+            "韓式泡菜牛肉丼－－－－－－90",
+            "咖哩丼－－－－－－－－－－50",
+            "咖哩豬肉丼－－－－－－－－80",
+            "咖哩雞肉丼－－－－－－－－80",
+            "川辣豬肉丼－－－－－－－－70",
+            "川辣雞排丼－－－－－－－－70",
+            "川辣牛肉丼－－－－－－－－80",
+            "川辣豬排丼－－－－－－－－80",
+            "川辣雞腿丼－－－－－－－－85",
+            "上湯拉麵－－－－－－－－－60",
+            "海苔拉麵－－－－－－－－－65",
+            "韓式泡菜拉麵－－－－－－－75",
+            "招牌叉燒拉麵－－－－－－－80",
+            "雞排拉麵－－－－－－－－－85",
+            "可樂餅拉麵－－－－－－－－90",
+            "黃金豬排拉麵－－－－－－－95",
+            "起司豬排拉麵－－－－－－－95"
     };
 
     private String[] dish_GuoBaoBao = new String[]{
-
+            "家傳焢肉刈包－－－－－－－45",
+            "京醬焢肉刈包－－－－－－－45",
+            "招牌嫩骨刈包－－－－－－－45",
+            "家傳豬腳飯－－－－－－－－60",
+            "香煎雞腿肉飯－－－－－－－55",
+            "香煎排骨飯－－－－－－－－55",
+            "招牌嫩骨飯－－－－－－－－55",
+            "家傳焢肉飯－－－－－－－－55",
+            "泰式鴨香飯－－－－－－－－55",
+            "梅干肉燥飯+瓜仔鮮雞盅－－75",
+            "梅干肉燥飯+人蔘雞腿盅－－80",
+            "梅干肉燥飯+藥燉排骨盅－－75",
+            "藥燉排骨盅－－－－－－－－45",
+            "瓜仔鮮雞盅－－－－－－－－45",
+            "人蔘鮮雞盅－－－－－－－－50"
     };
 
     private String[] dish_Mony = new String[]{
-
+            "牛丼－－－－－－－－－－－80",
+            "雙倍牛丼－－－－－－－－－120",
+            "炸雞牛丼－－－－－－－－－110",
+            "炸豬排牛丼－－－－－－－－120",
+            "魚排牛丼－－－－－－－－－110",
+            "三種起司牛丼－－－－－－－100",
+            "咖哩牛丼－－－－－－－－－90",
+            "泡菜牛丼－－－－－－－－－90",
+            "炸豬排丼－－－－－－－－－80",
+            "炸雞丼－－－－－－－－－－70",
+            "魚排丼－－－－－－－－－－70",
+            "德式香腸丼－－－－－－－－70",
+            "咖哩豬排丼－－－－－－－－80",
+            "咖哩炸雞丼－－－－－－－－70",
+            "咖哩魚排丼－－－－－－－－70",
+            "德式香腸咖哩飯－－－－－－70",
+            "韓式泡菜咖哩飯－－－－－－70",
+            "四種起司肉醬飯－－－－－－90",
+            "德腸起司肉醬飯－－－－－－100",
+            "泡菜起司肉醬飯－－－－－－80",
+            "起司肉醬飯－－－－－－－－70",
+            "印度拉茶－－－－－－－－－30",
+            "蘋果紅茶－－－－－－－－－25",
+            "濃味綠茶－－－－－－－－－25"
     };
 
-    private String[] dish_no = new String[]{
-
+    private String[] dish_porridge = new String[]{
+            "廣東粥－－－－－－－－－－55",
+            "海鮮粥－－－－－－－－－－55",
+            "玉米瘦肉粥－－－－－－－－55",
+            "皮蛋瘦肉粥－－－－－－－－55",
+            "香菇瘦肉粥－－－－－－－－55",
+            "蔬菜瘦肉粥－－－－－－－－55",
+            "花枝瘦肉粥－－－－－－－－55",
+            "蝦仁瘦肉粥－－－－－－－－55",
+            "豬肝瘦肉粥－－－－－－－－55",
+            "吻仔魚瘦肉粥－－－－－－－55",
+            "招牌粥－－－－－－－－－－65",
+            "鮑魚粥－－－－－－－－－－65",
+            "魚片粥－－－－－－－－－－65",
+            "生滾牛肉粥－－－－－－－－65",
+            "奶油蟹肉粥－－－－－－－－75",
+            "蒜味牛肉炒麵－－－－－－－60",
+            "蒜味豬肉炒麵－－－－－－－60",
+            "沙茶牛肉炒麵－－－－－－－60",
+            "沙茶豬肉炒麵－－－－－－－60",
+            "沙茶豬肝炒麵－－－－－－－60",
+            "豬肝鍋燒麵－－－－－－－－65",
+            "牛肉鍋燒麵－－－－－－－－65",
+            "豬肉鍋燒麵－－－－－－－－65",
+            "海鮮鍋燒麵－－－－－－－－65",
+            "泡菜鍋燒麵－－－－－－－－65"
     };
+    /*--------------------店家資訊-------------------------*/
 
     public DetailFragment() {
         // Required empty public constructor
@@ -191,6 +278,7 @@ public class DetailFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         if (container == null) return null;
 
+        //建立店名、地址、電話
         View view = inflater.inflate(R.layout.fragment_detail, container, false);
         TextView text_name = (TextView) view.findViewById(R.id.text_name);
         TextView text_address = (TextView) view.findViewById(R.id.text_address);
@@ -200,20 +288,17 @@ public class DetailFragment extends Fragment {
         text_address.setText(ShopList.shopList[position].getAddress());
         text_phone.setText(ShopList.shopList[position].getPhone());
 
+        //建立菜單
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_dish);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        //建立店家圖片
         ImageView shop_image = (ImageView) view.findViewById(R.id.shop_image);
 
-        /*if (position == 0) {
-            MyAdapter myAdapter = new MyAdapter(dish_IDoSakura);
-
-            recyclerView.setAdapter(myAdapter);
-            recyclerView.setItemAnimator(new DefaultItemAnimator());
-        }*/
-
+        //建立RecyclerView的Adapter
         MyAdapter myAdapter;
 
+        //顯示
         switch(position){
             case 0:
                 shop_image.setImageResource(R.drawable.idosakura);
@@ -258,29 +343,29 @@ public class DetailFragment extends Fragment {
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 6:
-                //shop_image.setImageResource(R.drawable.malaysia);
+                shop_image.setImageResource(R.drawable.liging);
                 myAdapter = new MyAdapter(dish_LiGing);
 
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 7:
-                //shop_image.setImageResource(R.drawable.malaysia);
+                shop_image.setImageResource(R.drawable.guobaobao);
                 myAdapter = new MyAdapter(dish_GuoBaoBao);
 
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 8:
-                //shop_image.setImageResource(R.drawable.malaysia);
+                shop_image.setImageResource(R.drawable.mony);
                 myAdapter = new MyAdapter(dish_Mony);
 
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 break;
             case 9:
-                //shop_image.setImageResource(R.drawable.malaysia);
-                myAdapter = new MyAdapter(dish_no);
+                shop_image.setImageResource(R.drawable.porridge);
+                myAdapter = new MyAdapter(dish_porridge);
 
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());

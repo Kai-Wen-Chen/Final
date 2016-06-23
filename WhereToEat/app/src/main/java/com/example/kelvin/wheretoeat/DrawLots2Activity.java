@@ -32,10 +32,14 @@ public class DrawLots2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_draw_lots2);
+
+        //建立工具列
         Toolbar my_toolbar = (Toolbar) findViewById(R.id.draw_lots2_toolbar);
         setSupportActionBar(my_toolbar);
         getSupportActionBar().setTitle(R.string.my_tb_title);
         getSupportActionBar().setIcon(R.drawable.ic_action_name);
+
+        //建立輸入相關物件
         restaurant=(EditText) findViewById(R.id.editText);
         number=(EditText) findViewById(R.id.editText2);
         text = (TextView) findViewById(R.id.textView2);
@@ -48,6 +52,8 @@ public class DrawLots2Activity extends AppCompatActivity {
     }
     String input;
     int times=0;
+
+    //輸入店名
     public void myFancyMethod(View v){
         //---------------Get User input---------------------//
         if(restaurant.getText().length()!=0) {
@@ -62,11 +68,14 @@ public class DrawLots2Activity extends AppCompatActivity {
             }
             text.setText(input);
             result.setText("最多5家");
+            restaurant.setText("");
         }
     }
     List<Integer> list = new ArrayList();
     String numInput;
     int btn2Times=0;
+
+    //輸入人數
     public void myFancyMethod2(View v){
         //---------------Get User input---------------------//
         Integer num=0;
@@ -86,8 +95,11 @@ public class DrawLots2Activity extends AppCompatActivity {
             btn2Times++;
             Pnum.setText(numInput);
             result.setText("最多5家");
+            number.setText("");
         }
     }
+
+    //抽籤程式，依照比例隨機
     public void myFancyMethod3(View v){
         //---------------Get User input---------------------//
         int total=0;
@@ -120,6 +132,8 @@ public class DrawLots2Activity extends AppCompatActivity {
             result.setText("Wrong input");
         }
     }
+
+    //重置
     public void myFancyMethod4(View v){
         if(list!=null)
             list.clear();
@@ -130,12 +144,14 @@ public class DrawLots2Activity extends AppCompatActivity {
         btn2Times=0;
     }
 
+    //建立選單
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.mainpage, menu);
         return true;
     }
 
+    //選擇選單選項
     public boolean onOptionsItemSelected(MenuItem item) {
         int item_id = item.getItemId();
 
